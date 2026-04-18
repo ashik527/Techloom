@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Digital products being sold on the platform",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "regularPrice": { "type": "number" },
+        "salePrice": { "type": "number" },
+        "categories": { "type": "array" },
+        "featured": { "type": "boolean" },
+        "banner": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "regularPrice", "createdAt"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product categories",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["name", "icon"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Global application settings",
+      "type": "object",
+      "properties": {
+        "whatsappNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "location": { "type": "string" },
+        "facebookPage": { "type": "string" },
+        "paymentNumber": { "type": "string" }
+      }
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Customer reviews",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewText": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["customerName", "rating", "reviewText"]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "description": "Frequently asked questions",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string" },
+        "answer": { "type": "string" }
+      },
+      "required": ["question", "answer"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of available digital products"
+    },
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Product categories"
+    },
+    "/settings/{settingsId}": {
+      "schema": "AppSettings",
+      "description": "Global settings document"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Product reviews"
+    },
+    "/faqs/{faqId}": {
+      "schema": "FAQ",
+      "description": "FAQ entries"
+    }
+  }
+}

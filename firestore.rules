@@ -1,0 +1,98 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Helper Functions ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isAdmin() {
+      // For simplicity in this demo, we check for a specific email. 
+      // Using regex for case-insensitive match (though lower case is standard).
+      return isSignedIn() && request.auth.token.email.matches('(?i)ashik\\.freelance527@gmail\\.com');
+    }
+
+    // --- Validation Blueprints ---
+
+    function isValidProduct(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.description is string && data.description.size() <= 2000 &&
+             data.regularPrice is number;
+    }
+
+    function isValidCategory(data) {
+      return data.name is string && data.name.size() <= 100 &&
+             data.icon is string && data.icon.size() <= 100;
+    }
+
+    function isValidReview(data) {
+      return data.customerName is string && data.customerName.size() <= 100 &&
+             data.rating is number && data.rating >= 1 && data.rating <= 5 &&
+             data.reviewText is string && data.reviewText.size() <= 1000;
+    }
+
+    // --- Match Blocks ---
+
+    // Products: Read public, Write Admin
+    match /products/{productId} {
+      allow get: if isValidId(productId);
+      allow list: if true;
+      allow create: if isAdmin() && isValidProduct(incoming()) && incoming().createdAt == request.time && isValidId(productId);
+      allow update: if isAdmin() && isValidProduct(incoming()) && incoming().createdAt == existing().createdAt;
+      allow delete: if isAdmin();
+    }
+
+    // Categories: Read public, Write Admin
+    match /categories/{categoryId} {
+      allow get: if isValidId(categoryId);
+      allow list: if true;
+      allow create: if isAdmin() && isValidCategory(incoming()) && isValidId(categoryId);
+      allow update: if isAdmin() && isValidCategory(incoming());
+      allow delete: if isAdmin();
+    }
+
+    // Settings: Read public, Write Admin
+    match /settings/{settingsId} {
+      allow get: if isValidId(settingsId);
+      allow list: if true;
+      allow write: if isAdmin();
+    }
+
+    // Reviews: Read public, Write public (simplified for demo)
+    match /reviews/{reviewId} {
+      allow get: if isValidId(reviewId);
+      allow list: if true;
+      allow create: if isValidReview(incoming()) && isValidId(reviewId);
+      allow delete: if isAdmin();
+    }
+
+    // FAQs: Read public, Write Admin
+    match /faqs/{faqId} {
+      allow get: if isValidId(faqId);
+      allow list: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
