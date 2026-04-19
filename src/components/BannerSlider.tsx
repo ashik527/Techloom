@@ -43,7 +43,7 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
             className="h-full w-full object-cover"
           />
           
-          <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-16 max-w-2xl">
+          <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-24 lg:px-40 max-w-4xl">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <MessageCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0" />
-              <span className="text-gray-600 dark:text-slate-400 text-sm">{settings?.whatsappNumber || '+880 1700-000000'}</span>
+              <span className="text-gray-600 dark:text-slate-400 text-sm">{settings?.whatsappNumber || '+880 1783-229765'}</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0" />

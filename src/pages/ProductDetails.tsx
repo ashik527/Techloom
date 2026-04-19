@@ -82,7 +82,7 @@ const ProductDetails: React.FC = () => {
   };
 
   const handleWhatsAppChat = () => {
-    const whatsappNumber = settings?.whatsappNumber?.replace(/\D/g, '') || '8801838192595';
+    const whatsappNumber = settings?.whatsappNumber?.replace(/\D/g, '') || '8801783229765';
     const message = `Hello Tech Loom! I'm interested in: ${product.title}\nPrice: ${formatPrice(product.salePrice)}\nLink: ${window.location.href}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };

@@ -18,7 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     e.stopPropagation();
     e.preventDefault();
     const message = `Hello Tech Loom! I am interested in ${product.title} (Price: ${formatPrice(product.salePrice)}). Can you help me?`;
-    window.open(`https://wa.me/8801838192595?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/8801783229765?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const handleBuyNow = (e: React.MouseEvent) => {
