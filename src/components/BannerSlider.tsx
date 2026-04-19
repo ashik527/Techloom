@@ -26,7 +26,7 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
 
   return (
-    <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-[2.5rem] group">
+    <div className="relative h-[500px] md:h-[700px] w-full overflow-hidden rounded-none group">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

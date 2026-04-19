@@ -59,7 +59,7 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-20 pb-20">
       {/* Hero */}
-      <section className="pt-4">
+      <section className="pt-0">
         <BannerSlider products={bannerProducts} />
       </section>
 
