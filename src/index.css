@@ -5,9 +5,15 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+@variant dark (&:where(.dark, .dark *));
+
 @layer base {
-  html {
+  :root {
+    color-scheme: light;
     scroll-behavior: smooth;
+  }
+  :root.dark {
+    color-scheme: dark;
   }
   body {
     @apply antialiased;

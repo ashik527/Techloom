@@ -169,7 +169,7 @@ const AdminProducts: React.FC = () => {
         featured,
         banner,
         image: imageUrl,
-        rating: editingProduct ? editingProduct.rating : (Math.random() * (5 - 4.5) + 4.5).toFixed(1),
+        rating: editingProduct ? editingProduct.rating : Number((Math.random() * (5 - 4.5) + 4.5).toFixed(1)),
         reviewCount: editingProduct ? editingProduct.reviewCount : Math.floor(Math.random() * (500 - 10) + 10),
         createdAt: editingProduct ? editingProduct.createdAt : serverTimestamp(),
       };
@@ -223,7 +223,7 @@ const AdminProducts: React.FC = () => {
         <Search className="w-5 h-5 text-slate-500 ml-2" />
         <input 
           type="text"
-          placeholder="Search products by title..."
+          placeholder="Enter product title..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="bg-transparent border-none focus:ring-0 text-white w-full placeholder:text-slate-600"
@@ -356,8 +356,8 @@ const AdminProducts: React.FC = () => {
                         required
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                        placeholder="e.g. Premium Digital Asset Pack"
+                        className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                        placeholder="Enter product title"
                       />
                     </div>
 
@@ -368,8 +368,8 @@ const AdminProducts: React.FC = () => {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         rows={4}
-                        className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all resize-none"
-                        placeholder="Describe your product features and benefits..."
+                        className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all resize-none placeholder:text-slate-600"
+                        placeholder="Enter product description..."
                       />
                     </div>
 
@@ -381,7 +381,7 @@ const AdminProducts: React.FC = () => {
                           required
                           value={regularPrice}
                           onChange={(e) => setRegularPrice(e.target.value)}
-                          className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                          className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
                           placeholder="0.00"
                         />
                       </div>
@@ -392,7 +392,7 @@ const AdminProducts: React.FC = () => {
                           required
                           value={salePrice}
                           onChange={(e) => setSalePrice(e.target.value)}
-                          className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                          className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
                           placeholder="0.00"
                         />
                       </div>

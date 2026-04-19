@@ -174,8 +174,8 @@ const AdminCategories: React.FC = () => {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                    placeholder="e.g. Graphics"
+                    className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                    placeholder="Enter category name"
                   />
                 </div>
 
@@ -186,8 +186,8 @@ const AdminCategories: React.FC = () => {
                     required
                     value={icon}
                     onChange={(e) => setIcon(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                    placeholder="e.g. 🎨"
+                    className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                    placeholder="Enter emoji icon"
                   />
                 </div>
 

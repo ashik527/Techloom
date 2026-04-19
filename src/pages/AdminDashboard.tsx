@@ -157,7 +157,7 @@ const AdminDashboard: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-black text-white mb-2">Dashboard Overview</h1>
-          <p className="text-slate-500">Welcome back! Here's what's happening with PlaxoMart.</p>
+          <p className="text-slate-500">Welcome back! Here's what's happening with Tech Loom.</p>
         </div>
         <div className="flex gap-4">
           {products.length === 0 && (

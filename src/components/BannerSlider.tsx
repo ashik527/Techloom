@@ -61,7 +61,7 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
               <div className="flex items-center gap-6">
                 <Link
                   to={`/product/${products[currentIndex].id}`}
-                  className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all active:scale-95"
+                  className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all active:scale-95 shadow-lg shadow-white/10"
                 >
                   <ShoppingCart className="w-5 h-5" /> Buy Now - {formatPrice(products[currentIndex].salePrice)}
                 </Link>

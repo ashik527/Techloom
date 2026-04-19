@@ -51,7 +51,7 @@ const AdminLayout: React.FC = () => {
                 <Store className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-black bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-                PlaxoMart
+                Tech Loom
               </span>
             </Link>
             <button className="lg:hidden" onClick={() => setIsSidebarOpen(false)}>

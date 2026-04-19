@@ -57,7 +57,7 @@ const Checkout: React.FC = () => {
     const productNames = cart.map(item => `${item.title} (x${item.quantity})`).join(', ');
     const whatsapp = settings?.whatsappNumber?.replace(/\D/g, '') || '8801838192595';
     
-    const message = `*New Order from PlaxoMart*
+    const message = `*New Order from Tech Loom*
 --------------------------
 *Order ID:* ${orderId}
 *Product:* ${productNames}
@@ -75,10 +75,10 @@ Please confirm my order. Thank you!`;
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="max-w-4xl mx-auto px-4 py-12 transition-colors">
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-gray-500 hover:text-indigo-600 font-bold mb-8 transition-colors group"
+        className="flex items-center gap-2 text-gray-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold mb-8 transition-colors group"
       >
         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
         Back
@@ -87,28 +87,28 @@ Please confirm my order. Thank you!`;
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left: Summary & Payment */}
         <div className="space-y-8">
-          <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm">
-            <h2 className="text-2xl font-black text-gray-900 mb-6">Order Summary</h2>
+          <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 shadow-sm transition-colors">
+            <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-6">Order Summary</h2>
             <div className="space-y-4 mb-8">
               {cart.map((item) => (
                 <div key={item.id} className="flex justify-between items-center">
                   <div className="min-w-0">
-                    <p className="text-sm font-bold text-gray-900 truncate">{item.title}</p>
-                    <p className="text-xs text-gray-400 font-medium">Quantity: {item.quantity}</p>
+                    <p className="text-sm font-bold text-gray-900 dark:text-slate-200 truncate">{item.title}</p>
+                    <p className="text-xs text-gray-400 dark:text-slate-500 font-medium">Quantity: {item.quantity}</p>
                   </div>
-                  <span className="text-sm font-bold text-gray-900 shrink-0">
+                  <span className="text-sm font-bold text-gray-900 dark:text-slate-200 shrink-0">
                     {formatPrice(item.salePrice * item.quantity)}
                   </span>
                 </div>
               ))}
             </div>
-            <div className="pt-6 border-t border-gray-100 flex justify-between items-center">
-              <span className="text-lg font-bold text-gray-900">Total Amount</span>
-              <span className="text-2xl font-black text-indigo-600">{formatPrice(totalPrice)}</span>
+            <div className="pt-6 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center">
+              <span className="text-lg font-bold text-gray-900 dark:text-white">Total Amount</span>
+              <span className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{formatPrice(totalPrice)}</span>
             </div>
           </div>
 
-          <div className="bg-indigo-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-indigo-100">
+          <div className="bg-indigo-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-indigo-100 dark:shadow-black/20">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Wallet className="w-6 h-6" />
               Payment Instructions
@@ -145,16 +145,16 @@ Please confirm my order. Thank you!`;
         </div>
 
         {/* Right: Form */}
-        <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm h-fit">
-          <h2 className="text-2xl font-black text-gray-900 mb-8">Complete Your Order</h2>
+        <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 shadow-sm h-fit transition-colors">
+          <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-8">Complete Your Order</h2>
           
           <div className="flex gap-4 mb-8">
             <button
               onClick={() => setPaymentMethod('bKash')}
               className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl font-bold border-2 transition-all ${
                 paymentMethod === 'bKash'
-                  ? 'bg-pink-50 border-pink-500 text-pink-600'
-                  : 'bg-white border-gray-100 text-gray-400'
+                  ? 'bg-pink-50 dark:bg-pink-950/20 border-pink-500 text-pink-600 dark:text-pink-400'
+                  : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700 text-gray-400 dark:text-slate-500'
               }`}
             >
               <CreditCard className="w-5 h-5" />
@@ -164,8 +164,8 @@ Please confirm my order. Thank you!`;
               onClick={() => setPaymentMethod('Nagad')}
               className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl font-bold border-2 transition-all ${
                 paymentMethod === 'Nagad'
-                  ? 'bg-orange-50 border-orange-500 text-orange-600'
-                  : 'bg-white border-gray-100 text-gray-400'
+                  ? 'bg-orange-50 dark:bg-orange-950/20 border-orange-500 text-orange-600 dark:text-orange-400'
+                  : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700 text-gray-400 dark:text-slate-500'
               }`}
             >
               <CreditCard className="w-5 h-5" />
@@ -175,47 +175,47 @@ Please confirm my order. Thank you!`;
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">Your Name</label>
+              <label className="block text-sm font-bold text-gray-700 dark:text-slate-300 mb-2 ml-1">Your Name</label>
               <input
                 required
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-200 transition-all font-medium"
-                placeholder="Enter your full name"
+                className="w-full px-6 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 dark:focus:ring-indigo-900/20 focus:border-indigo-200 dark:focus:border-indigo-800 transition-all font-medium placeholder:text-gray-300 dark:placeholder:text-slate-600"
+                placeholder="Enter your name"
               />
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">Your Phone Number</label>
+              <label className="block text-sm font-bold text-gray-700 dark:text-slate-300 mb-2 ml-1">Your Phone Number</label>
               <input
                 required
                 type="tel"
                 value={formData.number}
                 onChange={(e) => setFormData({ ...formData, number: e.target.value })}
-                className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-200 transition-all font-medium"
-                placeholder="01XXX-XXXXXX"
+                className="w-full px-6 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 dark:focus:ring-indigo-900/20 focus:border-indigo-200 dark:focus:border-indigo-800 transition-all font-medium placeholder:text-gray-300 dark:placeholder:text-slate-600"
+                placeholder="Enter your number"
               />
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">Transaction ID</label>
+              <label className="block text-sm font-bold text-gray-700 dark:text-slate-300 mb-2 ml-1">Transaction ID</label>
               <input
                 required
                 type="text"
                 value={formData.transactionId}
                 onChange={(e) => setFormData({ ...formData, transactionId: e.target.value })}
-                className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-200 transition-all font-medium"
-                placeholder="Enter TxID from SMS"
+                className="w-full px-6 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 dark:focus:ring-indigo-900/20 focus:border-indigo-200 dark:focus:border-indigo-800 transition-all font-medium placeholder:text-gray-300 dark:placeholder:text-slate-600"
+                placeholder="Enter TxID"
               />
             </div>
             
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-3 shadow-xl shadow-indigo-100 active:scale-[0.98] mt-8"
+              className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-3 shadow-xl shadow-indigo-100 dark:shadow-black/30 active:scale-[0.98] mt-8"
             >
               <MessageCircle className="w-6 h-6" />
               Confirm via WhatsApp
             </button>
-            <p className="text-center text-xs text-gray-400 font-medium">
+            <p className="text-center text-xs text-gray-400 dark:text-slate-500 font-medium">
               By clicking confirm, you will be redirected to WhatsApp to complete your order.
             </p>
           </form>

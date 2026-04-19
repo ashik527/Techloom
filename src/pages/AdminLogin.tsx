@@ -63,7 +63,7 @@ const AdminLogin: React.FC = () => {
               <LogIn className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-black text-white mb-2">Admin Login</h1>
-            <p className="text-slate-400 text-sm">Access the PlaxoMart dashboard</p>
+            <p className="text-slate-400 text-sm">Access the Tech Loom dashboard</p>
           </div>
 
           {error && (
@@ -83,8 +83,8 @@ const AdminLogin: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="ashik.freelance527@gmail.com"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter your email"
                 />
               </div>
             </div>
@@ -98,8 +98,8 @@ const AdminLogin: React.FC = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="••••••••"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter your password"
                 />
               </div>
             </div>

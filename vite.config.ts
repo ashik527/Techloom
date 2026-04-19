@@ -14,8 +14,8 @@ export default defineConfig(({mode}) => {
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
         manifest: {
-          name: 'PlaxoMart',
-          short_name: 'PlaxoMart',
+          name: 'Tech Loom',
+          short_name: 'Tech Loom',
           description: 'Your premium digital marketplace',
           theme_color: '#4f46e5',
           background_color: '#ffffff',

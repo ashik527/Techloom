@@ -23,12 +23,12 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, isActive, onClick
         'flex flex-col items-center gap-3 p-6 rounded-[2rem] border transition-all min-w-[120px] group',
         isActive 
           ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-500/20' 
-          : 'bg-white border-gray-100 text-gray-600 hover:border-indigo-200 hover:bg-indigo-50/30'
+          : 'bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800 text-gray-600 dark:text-slate-400 hover:border-indigo-200 dark:hover:border-indigo-900 hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20'
       )}
     >
       <div className={cn(
         'w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110',
-        isActive ? 'bg-white/20' : 'bg-gray-50'
+        isActive ? 'bg-white/20' : 'bg-gray-50 dark:bg-slate-800'
       )}>
         {/* If icon is an emoji, show it directly, otherwise show the icon component */}
         {category.icon.length <= 2 ? (

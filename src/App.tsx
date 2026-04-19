@@ -21,6 +21,8 @@ import ScrollToTop from './components/ScrollToTop';
 import { seedDatabase } from './seedData';
 import { useEffect } from 'react';
 
+import { ThemeProvider } from './context/ThemeContext';
+
 export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -29,15 +31,16 @@ export default function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <CartProvider>
-        <Router>
-          <ScrollToTop />
-          <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900">
-            <Header onCartOpen={() => setIsCartOpen(true)} />
-            <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-            
-            <main className="pt-20">
+    <ThemeProvider>
+      <AuthProvider>
+        <CartProvider>
+          <Router>
+            <ScrollToTop />
+            <div className="min-h-screen bg-white dark:bg-slate-950 font-sans text-gray-900 dark:text-slate-100 selection:bg-indigo-100 dark:selection:bg-indigo-900/30 selection:text-indigo-900 dark:selection:text-indigo-200 transition-colors duration-300">
+              <Header onCartOpen={() => setIsCartOpen(true)} />
+              <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+              
+              <main className="pt-20">
               <Routes>
                 {/* User Routes */}
                 <Route path="/" element={<Home />} />
@@ -62,5 +65,6 @@ export default function App() {
         </Router>
       </CartProvider>
     </AuthProvider>
+    </ThemeProvider>
   );
 }

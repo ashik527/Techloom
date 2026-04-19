@@ -89,8 +89,8 @@ const AdminSettings: React.FC = () => {
                   name="whatsappNumber"
                   value={settings.whatsappNumber}
                   onChange={handleChange}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="+8801234567890"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter WhatsApp number"
                 />
               </div>
             </div>
@@ -103,8 +103,8 @@ const AdminSettings: React.FC = () => {
                   name="email"
                   value={settings.email}
                   onChange={handleChange}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="contact@plaxomart.com"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter email address"
                 />
               </div>
             </div>
@@ -117,8 +117,8 @@ const AdminSettings: React.FC = () => {
                   name="location"
                   value={settings.location}
                   onChange={handleChange}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="Gaibandha, Bangladesh"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter location"
                 />
               </div>
             </div>
@@ -131,8 +131,8 @@ const AdminSettings: React.FC = () => {
                   name="facebookPage"
                   value={settings.facebookPage}
                   onChange={handleChange}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="https://facebook.com/plaxomart"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter Facebook page URL"
                 />
               </div>
             </div>
@@ -156,8 +156,8 @@ const AdminSettings: React.FC = () => {
                   name="paymentNumber"
                   value={settings.paymentNumber}
                   onChange={handleChange}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
-                  placeholder="017XXXXXXXX"
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-50/5 focus:border-indigo-500 transition-all placeholder:text-slate-600"
+                  placeholder="Enter payment number"
                 />
               </div>
               <p className="text-xs text-slate-500 mt-2 ml-1 italic">This number will be shown to customers during checkout.</p>
