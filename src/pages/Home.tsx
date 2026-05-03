@@ -78,7 +78,7 @@ const Home: React.FC = () => {
           </h2>
           <span className="text-sm font-bold text-gray-400 dark:text-slate-500">{filteredProducts.length} Premium Items</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
           <motion.div
             key={i}
             whileHover={{ y: -5 }}
-            className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/50 shadow-sm hover:shadow-xl transition-all"
+            className="p-8 rounded-[1.25rem] bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/50 shadow-sm hover:shadow-xl transition-all"
           >
             <div className="w-14 h-14 bg-indigo-50 dark:bg-indigo-950/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 font-bold">
               <f.icon className="w-7 h-7" />

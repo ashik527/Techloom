@@ -20,24 +20,24 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, isActive, onClick
     <button
       onClick={onClick}
       className={cn(
-        'flex flex-col items-center gap-3 p-6 rounded-[2rem] border transition-all min-w-[120px] group',
+        'flex flex-col items-center justify-center gap-2 p-3 sm:p-6 rounded-lg sm:rounded-2xl border transition-all w-full aspect-square group',
         isActive 
           ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-500/20' 
           : 'bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800 text-gray-600 dark:text-slate-400 hover:border-indigo-200 dark:hover:border-indigo-900 hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20'
       )}
     >
       <div className={cn(
-        'w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110',
+        'w-8 h-8 sm:w-12 sm:h-12 rounded-md sm:rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110',
         isActive ? 'bg-white/20' : 'bg-gray-50 dark:bg-slate-800'
       )}>
         {/* If icon is an emoji, show it directly, otherwise show the icon component */}
         {category.icon.length <= 2 ? (
-          <span className="text-2xl">{category.icon}</span>
+          <span className="text-xl sm:text-2xl">{category.icon}</span>
         ) : (
-          <IconComponent className={cn('w-6 h-6', isActive ? 'text-white' : 'text-indigo-600')} />
+          <IconComponent className={cn('w-4 h-4 sm:w-6 sm:h-6', isActive ? 'text-white' : 'text-indigo-600')} />
         )}
       </div>
-      <span className="text-sm font-bold whitespace-nowrap">{category.name}</span>
+      <span className="text-[10px] sm:text-sm font-bold text-center leading-tight">{category.name}</span>
     </button>
   );
 };

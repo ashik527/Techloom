@@ -22,7 +22,7 @@ const ReviewSection: React.FC = () => {
   if (reviews.length === 0) return null;
 
   return (
-    <div className="py-20 bg-indigo-50/30 dark:bg-indigo-950/20 -mx-4 px-4 md:mx-0 md:px-0 rounded-[3rem]">
+    <div className="py-20 bg-indigo-50/30 dark:bg-indigo-950/20 -mx-4 px-4 md:mx-0 md:px-0 rounded-[1.5rem]">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-slate-100 mb-4">What Our Customers Say</h2>
         <p className="text-gray-500 dark:text-slate-400 max-w-2xl mx-auto font-medium">
@@ -38,7 +38,7 @@ const ReviewSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-gray-100 dark:border-slate-800 relative"
+            className="bg-white dark:bg-slate-900 p-8 rounded-[1.25rem] shadow-sm border border-gray-100 dark:border-slate-800 relative"
           >
             <div className="absolute top-8 right-8 opacity-10">
               <Quote className="w-12 h-12 text-indigo-600 dark:text-indigo-400" />

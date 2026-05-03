@@ -65,7 +65,7 @@ const Products: React.FC = () => {
             <Filter className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             <span>Filter by Category</span>
           </div>
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4 -mx-2 px-2 sm:mx-0 sm:px-0">
             <CategoryCard 
               category={{ id: 'all', name: 'All Products', icon: 'LayoutGrid' }} 
               isActive={selectedCategory === null}
@@ -92,7 +92,7 @@ const Products: React.FC = () => {
           </div>
           
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8">
               {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

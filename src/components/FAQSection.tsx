@@ -33,7 +33,7 @@ const FAQSection: React.FC = () => {
         {faqs.map((faq) => (
           <div
             key={faq.id}
-            className="border border-gray-100 dark:border-slate-800 rounded-3xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm"
+            className="border border-gray-100 dark:border-slate-800 rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm"
           >
             <button
               onClick={() => setOpenId(openId === faq.id ? null : faq.id)}

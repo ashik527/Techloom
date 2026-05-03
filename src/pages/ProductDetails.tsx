@@ -113,7 +113,7 @@ const ProductDetails: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="relative aspect-square rounded-[3rem] overflow-hidden bg-white dark:bg-slate-900 shadow-xl shadow-gray-200/50 dark:shadow-black/50 border border-gray-100 dark:border-slate-800"
+            className="relative aspect-square rounded-[1.5rem] overflow-hidden bg-white dark:bg-slate-900 shadow-xl shadow-gray-200/50 dark:shadow-black/50 border border-gray-100 dark:border-slate-800"
           >
             <img 
               src={product.image} 
@@ -183,13 +183,13 @@ const ProductDetails: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mt-auto">
               <button 
                 onClick={handleBuyNow}
-                className="flex-1 bg-indigo-600 text-white py-5 rounded-[2rem] font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center justify-center gap-3 active:scale-95"
+                className="flex-1 bg-indigo-600 text-white py-5 rounded-[1rem] font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 flex items-center justify-center gap-3 active:scale-95"
               >
                 <Zap className="w-6 h-6" /> Buy Now
               </button>
               <button 
                 onClick={() => addToCart(product)}
-                className="flex-1 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border-2 border-gray-100 dark:border-slate-700 py-5 rounded-[2rem] font-black text-lg hover:border-indigo-600 dark:hover:border-indigo-400 transition-all flex items-center justify-center gap-3 active:scale-95"
+                className="flex-1 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border-2 border-gray-100 dark:border-slate-700 py-5 rounded-[1rem] font-black text-lg hover:border-indigo-600 dark:hover:border-indigo-400 transition-all flex items-center justify-center gap-3 active:scale-95"
               >
                 <ShoppingCart className="w-6 h-6" /> Add to Cart
               </button>
@@ -197,7 +197,7 @@ const ProductDetails: React.FC = () => {
 
             <button 
               onClick={handleWhatsAppChat}
-              className="w-full mt-4 bg-emerald-500 text-white py-5 rounded-[2rem] font-black text-lg hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-3 active:scale-95"
+              className="w-full mt-4 bg-emerald-500 text-white py-5 rounded-[1rem] font-black text-lg hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-3 active:scale-95"
             >
               <MessageCircle className="w-6 h-6" /> Chat on WhatsApp
             </button>

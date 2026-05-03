@@ -92,7 +92,7 @@ const AdminLayout: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 lg:ml-72 min-h-screen flex flex-col">
         {/* Header */}
-        <header className="h-20 bg-slate-900/50 backdrop-blur-md border-bottom border-slate-800 px-8 flex items-center justify-between sticky top-0 z-40">
+        <header className="h-20 bg-slate-950 border-b border-slate-800 px-8 flex items-center justify-between sticky top-0 z-40">
           <button className="lg:hidden" onClick={() => setIsSidebarOpen(true)}>
             <Menu className="w-6 h-6 text-slate-400" />
           </button>

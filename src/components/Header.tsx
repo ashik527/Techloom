@@ -47,8 +47,8 @@ const Header: React.FC<HeaderProps> = ({ onCartOpen }) => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3',
-        isScrolled 
-          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm' 
+        (isScrolled || isMobileMenuOpen)
+          ? 'bg-white dark:bg-slate-950 shadow-sm' 
           : 'bg-transparent'
       )}
     >
@@ -58,7 +58,10 @@ const Header: React.FC<HeaderProps> = ({ onCartOpen }) => {
           <div className="bg-indigo-600 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-lg shadow-indigo-500/20">
             <Store className="w-6 h-6 text-white" />
           </div>
-          <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+          <span className={cn(
+            "text-2xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent",
+            (isScrolled || isMobileMenuOpen) ? "text-indigo-600" : ""
+          )}>
             Tech Loom
           </span>
         </Link>
@@ -128,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ onCartOpen }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-slate-900 z-50 shadow-2xl md:hidden flex flex-col p-6"
+              className="fixed top-0 right-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-slate-950 z-[60] shadow-2xl md:hidden flex flex-col p-6 opacity-100"
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-xl font-bold text-indigo-600 dark:text-indigo-400">Menu</span>
@@ -153,18 +156,6 @@ const Header: React.FC<HeaderProps> = ({ onCartOpen }) => {
                   </Link>
                 ))}
               </nav>
-              <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
-                <button
-                  onClick={toggleTheme}
-                  className="flex items-center gap-3 w-full py-4 px-2 text-gray-600 dark:text-slate-400 font-medium"
-                >
-                  {theme === 'light' ? (
-                    <><Moon className="w-5 h-5" /> Dark Mode</>
-                  ) : (
-                    <><Sun className="w-5 h-5" /> Light Mode</>
-                  )}
-                </button>
-              </div>
             </motion.div>
           </>
         )}

@@ -63,7 +63,7 @@ const FeaturedProductsSlider: React.FC<FeaturedProductsSliderProps> = ({ product
         style={{ scrollBehavior: isUserInteracting ? 'smooth' : 'auto' }}
       >
         {products.map((product) => (
-          <div key={product.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] shrink-0">
+          <div key={product.id} className="w-[280px] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] shrink-0">
             <ProductCard product={product} />
           </div>
         ))}
