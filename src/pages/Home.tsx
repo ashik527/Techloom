@@ -8,8 +8,9 @@ import FeaturedProductsSlider from '../components/FeaturedProductsSlider';
 import ProductCard from '../components/ProductCard';
 import ReviewSection from '../components/ReviewSection';
 import FAQSection from '../components/FAQSection';
-import { Zap, ShieldCheck, Headphones, Tag, LayoutGrid } from 'lucide-react';
+import { Zap, ShieldCheck, Headphones, Tag, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -40,6 +41,8 @@ const Home: React.FC = () => {
   const filteredProducts = selectedCategory 
     ? products.filter(p => p.categories.includes(selectedCategory))
     : products;
+  
+  const displayProducts = filteredProducts.slice(0, 8);
 
   const features = [
     { icon: Zap, title: 'Instant Delivery', desc: 'Get your digital assets immediately after payment.' },
@@ -79,10 +82,22 @@ const Home: React.FC = () => {
           <span className="text-sm font-bold text-gray-400 dark:text-slate-500">{filteredProducts.length} Premium Items</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8">
-          {filteredProducts.map((product) => (
+          {displayProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+        
+        {filteredProducts.length > 8 && (
+          <div className="mt-12 text-center">
+            <Link 
+              to="/products"
+              className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/20 active:scale-95"
+            >
+              Show More Products
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Feature Highlights */}

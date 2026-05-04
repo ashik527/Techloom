@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Product } from '../types';
-import { formatPrice } from '../utils/utils';
-import { Link } from 'react-router-dom';
 
 interface BannerSliderProps {
   products: Product[];
@@ -27,13 +26,13 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
 
   return (
     <div className="relative h-[500px] md:h-[700px] w-full overflow-hidden rounded-none group">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: '-100%', opacity: 0 }}
+          transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
           className="absolute inset-0"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
@@ -45,13 +44,10 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
           
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-24 lg:px-40 max-w-4xl">
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
+              initial={{ x: 30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <span className="bg-indigo-600 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 inline-block">
-                Featured Deal
-              </span>
               <h2 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
                 {products[currentIndex].title}
               </h2>
@@ -61,9 +57,10 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ products }) => {
               <div className="flex items-center gap-6">
                 <Link
                   to={`/product/${products[currentIndex].id}`}
-                  className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all active:scale-95 shadow-lg shadow-white/10"
+                  className="bg-amber-600 text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-amber-700 transition-all active:scale-95 shadow-lg shadow-black/20"
                 >
-                  <ShoppingCart className="w-5 h-5" /> Buy Now - {formatPrice(products[currentIndex].salePrice)}
+                  <Eye className="w-5 h-5" />
+                  View Product
                 </Link>
               </div>
             </motion.div>

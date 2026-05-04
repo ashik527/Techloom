@@ -48,7 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             ))}
           </div>
           {product.featured && (
-            <div className="absolute top-3 right-3">
+            <div className="absolute top-3 right-3 hidden sm:block">
               <div className="bg-amber-400 p-1.5 rounded-full shadow-sm">
                 <Star className="w-3 h-3 text-white fill-current" />
               </div>
